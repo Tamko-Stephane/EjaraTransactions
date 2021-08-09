@@ -1,0 +1,33 @@
+<mat-card class="login-card">
+  <mat-card-header>
+    <mat-card-title>LOGIN</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form class="login-form" #form ="ngForm">
+      <table class="" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field class="email_field">
+              <mat-label>Username</mat-label>
+              <input matInput placeholder="Tamko" autocomplete="username" type="text" [formControl]="name">
+              <mat-error *ngIf="name.invalid">{{getErrorMessageName()}}</mat-error>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field class="password_field">
+              <mat-label>Password</mat-label>
+              <input matInput placeholder="Password" autocomplete="current-password" type="password" [formControl]="password">
+              <mat-error *ngIf="password.invalid">{{getErrorMessagePassword()}}</mat-error>
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+    </form>
+    <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button (click)="login()" [disabled]="form.dirty && !form.invalid" color="primary">Login</button>
+  </mat-card-actions>
+</mat-card>

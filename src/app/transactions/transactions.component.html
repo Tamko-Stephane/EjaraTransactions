@@ -1,0 +1,88 @@
+<table mat-table class="mat-table" matSort
+  [dataSource]="TRANSACTIONS">
+
+  <!--Date-->
+<ng-container matColumnDef="date_creation">
+  <th mat-header-cell *matHeaderCellDef mat-sort-header>Date</th>
+  <td mat-cell *matCellDef="let element">{{element.date_creation | date}}</td>
+</ng-container>
+<!--End Date-->
+
+<!--Transaction Type-->
+<ng-container matColumnDef="transaction_type">
+  <th mat-header-cell *matHeaderCellDef  mat-sort-header>Type</th>
+  <td mat-cell *matCellDef="let element">{{element.transaction_type}}</td>
+</ng-container>
+<!--End Transaction Type-->
+
+<!--Transaction Status-->
+<ng-container matColumnDef="transaction_status">
+  <th mat-header-cell *matHeaderCellDef  mat-sort-header>Status</th>
+  <td mat-cell *matCellDef="let element">{{element.transaction_status}}</td>
+</ng-container>
+<!--End Transaction Status-->
+<!--Emitter-->
+<ng-container matColumnDef="emitter">
+  <th mat-header-cell *matHeaderCellDef>Emitter</th>
+  <td mat-cell *matCellDef="let element">{{element.emitter}}</td>
+</ng-container>
+<!--End Emitter-->
+
+<!--Recipient-->
+<ng-container matColumnDef="receiver">
+  <th mat-header-cell *matHeaderCellDef>Recipient</th>
+  <td mat-cell *matCellDef="let element">{{element.receiver}}</td>
+</ng-container>
+<!--End Receiver-->
+
+<!--Raw amount-->
+<ng-container matColumnDef="amount_raw">
+  <th mat-header-cell *matHeaderCellDef>Raw amount</th>
+  <td mat-cell *matCellDef="let element">{{element.amount_raw}}</td>
+</ng-container>
+<!--End Raw amount-->
+
+<!--Net amount-->
+<ng-container matColumnDef="amount_net">
+  <th mat-header-cell *matHeaderCellDef>Net amount</th>
+  <td mat-cell *matCellDef="let element">{{element.amount_net}}</td>
+</ng-container>
+<!--End Net amount-->
+
+<!--Fiat currency-->
+<ng-container matColumnDef="fiat_currency">
+  <th mat-header-cell *matHeaderCellDef>Fiat currency</th>
+  <td mat-cell *matCellDef="let element">{{element.fiat_currency}}</td>
+</ng-container>
+<!--End Fiat currency-->
+
+<!--Crypto currency-->
+<ng-container matColumnDef="crypto_currency">
+  <th mat-header-cell *matHeaderCellDef>Crypto currency</th>
+  <td mat-cell *matCellDef="let element">{{element.crypto_currency}}</td>
+</ng-container>
+<!--End Crypto currency-->
+
+<!--Crypto amount-->
+<ng-container matColumnDef="crypto_amount">
+  <th mat-header-cell *matHeaderCellDef>Crypto amount</th>
+  <td mat-cell *matCellDef="let element">{{element.crypto_amount}}</td>
+</ng-container>
+<!--End Crypto currency-->
+
+
+<!--
+  <ng-container matColumnDef="date_creation">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header disableClear>Date</th>
+    <td mat-cell *matCellDef="let element">{{element.date_creation | date }}</td>
+  </ng-container> -->
+
+
+
+<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+<tr mat-row *matRowDef="let row; columns:displayedColumns;"></tr>
+
+</table>
+<!-- <mat-paginator [length]="resultsLength" [pageSize]="30"
+aria-label="Select transactions page"></mat-paginator>
+</div> -->
